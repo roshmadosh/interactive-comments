@@ -1,10 +1,18 @@
 import * as React from 'react';
+import { useComments } from './useComments';
+import { Comment } from './Comment';
 
 
 export const CommentList = () => {
+    const [comments, setComments] = useComments();
+
     return (
         <ul className='comment-list'>
-            <h1>Test comment</h1>
+            {comments.map(comment => 
+                <Comment
+                    comment={comment} 
+                    isReply={false}
+                />)} 
         </ul>
     )
 }

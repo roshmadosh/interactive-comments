@@ -34,5 +34,18 @@ body {
 }
 
 main ul.comment-list {
-    color: var(--color-blue);
+}
+
+.comment article {
+    display: flex;
+}
+.comment-score {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 7.2rem;
+}
+
+.reply {
+    background: var(--color-pale-red);
 }
