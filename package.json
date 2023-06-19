@@ -1,0 +1,17 @@
+{
+  "name": "interactive-comments-section-main",
+  "version": "1.0.0",
+  "description": "frontend mentor challenge, comments",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node esbuild.config.js"
+  },
+  "author": "hiroshi nobuoka",
+  "license": "ISC",
+  "dependencies": {
+    "esbuild": "^0.18.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
