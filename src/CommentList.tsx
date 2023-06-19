@@ -11,6 +11,7 @@ export const CommentList = () => {
             {comments.map(comment => 
                 <Comment
                     comment={comment} 
+                    degree={0}
                     isReply={false}
                 />)} 
         </ul>

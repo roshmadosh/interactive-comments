@@ -27,17 +27,19 @@ html {
 }
 
 body {
-    width: var(--max-width-desktop);
     margin: auto;
     font-family: var(--ff-main);
     font-size: 1.6rem;
 }
 
-main ul.comment-list {
+main {
+    max-width: var(--max-width-desktop);
+    margin: auto;
 }
 
 .comment article {
     display: flex;
+    margin-bottom: 1.6rem;
 }
 .comment-score {
     display: flex;
@@ -46,6 +48,8 @@ main ul.comment-list {
     height: 7.2rem;
 }
 
-.reply {
-    background: var(--color-pale-red);
+.ml-1, .ml-2, .ml-3, .ml-4 {
+    margin-left: 2vw;
+    border-left: 2px solid var(--color-light-gray);
+    padding: 0 2vw;
 }

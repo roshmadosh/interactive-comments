@@ -1,11 +1,16 @@
 import * as React from 'react';
 import { CommentType } from './useComments';
 
-export const Comment = ({ comment, isReply }: { comment: CommentType, isReply: boolean }) => {
-    
+type CommentProps  = {
+    comment: CommentType, 
+    degree: number,
+    isReply: boolean,
+}
+
+export const Comment = ({ comment, degree, isReply }: CommentProps) => {
 
     return (
-        <div className={`comment ${isReply ? 'reply' : ''}`}>
+        <div className={`comment ${isReply ? 'reply' : ''} ml-${degree}`}>
             <article>
                 <div className="comment-score">
                     <button>+</button>
@@ -24,6 +29,7 @@ export const Comment = ({ comment, isReply }: { comment: CommentType, isReply: b
             {comment.replies.map(reply => 
                 <Comment 
                     comment={reply} 
+                    degree={degree + 1}
                     isReply={true} />)}
         </div>
 
