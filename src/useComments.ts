@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react';
 
-type User = {
+export type User = {
    image: {
       png: string,
       webp: string
@@ -94,7 +94,7 @@ export const useComments = () => {
       setComments(data.comments);
    }, [])
 
-   return [comments, setComments];
+   return [comments, data.currentUser, setComments];
 
 } 
 
