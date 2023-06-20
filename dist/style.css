@@ -30,6 +30,7 @@ body {
     margin: auto;
     font-family: var(--ff-main);
     font-size: 1.6rem;
+    background-color: var(--color-very-light-gray);
 }
 
 main {
@@ -37,19 +38,98 @@ main {
     margin: auto;
 }
 
+button {
+    cursor: pointer;
+}
+
 .comment article {
     display: flex;
     margin-bottom: 1.6rem;
+    background-color: var(--color-white);
+    padding: 3.2rem;
+    border-radius: 1.6rem;
 }
+
+.header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.6rem;
+}
+
+.header-section img {
+    width: 4rem; 
+    height: 4rem;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.header > * {
+    margin-right: 1ch;
+}
+.header .username {
+    font-weight: bold;
+}
+
 .comment-score {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 7.2rem;
+    height: 9rem;
+    margin-right: 3.2rem;
+    background-color: var(--color-very-light-gray);
+    color: var(--color-blue);
+    font-weight: bold;
+    padding: .5rem 1rem;
 }
 
+.comment-score button {
+    background: transparent;
+    border: none;
+    font-size: 2.0rem;
+    color: var(--color-light-blue);
+}
 .ml-1, .ml-2, .ml-3, .ml-4 {
     margin-left: 2vw;
     border-left: 2px solid var(--color-light-gray);
-    padding: 0 2vw;
+    padding-left: 2vw;
+}
+
+.content-container button {
+    background-color: transparent;
+    border: none;
+    color: var(--color-blue);
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.content-container svg {
+    margin-right: 1ch;
+}
+
+.createdAt, .content {
+    color: var(--color-grayish-blue);
+}
+
+.you {
+    color: var(--color-white);
+    font-weight: bold;
+    font-size: 1.2rem;
+    background-color: var(--color-blue);
+    padding: .25ch .5ch;
+}
+
+.active-buttons {
+    display: flex;
+}
+.active-buttons button {
+    margin-left: 2ch;
+}
+
+.delete-button p {
+    color: var(--color-red);
 }
