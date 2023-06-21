@@ -27,7 +27,10 @@ export const CommentList = () => {
                 <CommentPost activeUser={currentUser} postType='SEND'/>
             </ul>
             {deleteId != -1 && 
-                <DeleteModal closeModal={() => setDeleteId(-1)} removeComment={removeComment}/>}
+                <>
+                    <div className="filter"></div>
+                    <DeleteModal closeModal={() => setDeleteId(-1)} removeComment={removeComment}/>
+                </>}
         </>
     )
 }

@@ -32,7 +32,6 @@ body {
     background-color: var(--color-very-light-gray);
 }
 
-
 main {
     max-width: var(--max-width-desktop);
     margin: auto;
@@ -42,6 +41,10 @@ main {
 button {
     cursor: pointer;
     border: none;
+}
+
+p {
+    line-height: 2.4rem;
 }
 
 .comment article {
@@ -199,4 +202,63 @@ button {
 
 .comment-post > * {
     margin-right: 1.6rem;
+}
+
+
+.modal {
+    width: 35rem;
+    position: absolute;
+    inset: 0 0 0 0;
+    margin: auto;
+    padding: 2.8rem;
+    background: var(--color-white);
+    height: fit-content;
+    z-index: 100;
+    border-radius: .8rem;
+}
+
+.modal h1 {
+    font-weight: 500;
+    font-size: 2.0rem;
+    color: var(--color-dark-blue);
+}
+.modal > * {
+    margin-bottom: 1.6rem;
+}
+
+.modal > *:last-child {
+    margin-bottom: 0;
+}
+.modal p {
+    color: var(--color-grayish-blue);
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+.modal-buttons button {
+    padding: 1.4ch 3ch;
+    border-radius: 0.75ch;
+    font-size: 1.4rem; 
+    font-weight: 500;
+    color: var(--color-white);
+    font-family: var(--ff-main);
+}
+.modal-buttons button:first-child {
+    background: var(--color-grayish-blue);
+}
+.modal-buttons button:last-child {
+    background: var(--color-red);
+}
+
+.filter {
+    position: fixed;
+    background: #2f2f2f;
+    opacity: 0.6;
+    height: 100vh;
+    width: 100vw;
+    top:0;
+    left:0;
+    z-index: 50;
 }
