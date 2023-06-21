@@ -88,13 +88,30 @@ const data: { currentUser: any, comments: CommentType[] } = {
 }
 
 export const useComments = () => {
-   const [comments, setComments] = useState([]); 
+  const [comments, setComments] = useState([]); 
 
-   useEffect(() => {
-      setComments(data.comments);
+  useEffect(() => {
+    setComments(data.comments);
    }, [])
 
-   return [comments, data.currentUser, setComments];
+  function deleteComment(parent, replies, id) {
+    if (!replies) {
+      return;
+    }
 
+    for (const comment of replies) {
+      if (comment.id == id) {
+        if (parent) {
+          parent.replies = replies.filter(c => c.id != id); 
+        }
+      }
+
+      deleteComment(comment, comment.replies, id);
+    };
+
+    setComments(comments);
+  }
+
+  return [comments, data.currentUser, deleteComment];
 } 
 

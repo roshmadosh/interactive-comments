@@ -7,13 +7,18 @@ type CommentProps  = {
     degree: number,
     isReply: boolean,
     activeUser: User,
+    setDeleting: any;
 }
 
-export const Comment = ({ comment, degree, isReply, activeUser}: CommentProps) => {
+export const Comment = ({ comment, degree, isReply, activeUser, setDeleting }: CommentProps) => {
     const [isPosting, setIsPosting] = React.useState(false);
     const isUserComment = activeUser.username === comment.user.username;
     function onAction(e) {
         setIsPosting(true);
+    }
+
+    function showModal() {
+        setDeleting(comment.id);
     }
 
     return (
@@ -39,7 +44,7 @@ export const Comment = ({ comment, degree, isReply, activeUser}: CommentProps) =
                                     <p>Reply</p>
                                 </button> :
                                 (<div className="active-buttons">
-                                    <button className="comment-button delete-button" onClick={onAction}>
+                                    <button className="comment-button delete-button" onClick={showModal}>
                                         <img src="images/icon-delete.svg" alt="delete icon" />
                                         <p>Delete</p>
                                     </button>
@@ -58,6 +63,7 @@ export const Comment = ({ comment, degree, isReply, activeUser}: CommentProps) =
                     activeUser={activeUser}
                     comment={reply} 
                     degree={degree + 1}
+                    setDeleting={setDeleting}
                     isReply={true} />)}
         </div>
 

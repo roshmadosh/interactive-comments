@@ -26,9 +26,6 @@ html {
 }
 
 body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     min-height: 100vh;
     font-family: var(--ff-main);
     font-size: 1.6rem;
@@ -38,6 +35,8 @@ body {
 
 main {
     max-width: var(--max-width-desktop);
+    margin: auto;
+    margin-top: 8rem;
 }
 
 button {
