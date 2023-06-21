@@ -4,19 +4,19 @@ import { Comment } from './Comment';
 import { CommentPost } from './CommentPost';
 
 
-export const CommentList = ({ activeUsername }) => {
+export const CommentList = () => {
     const [comments, currentUser, setComments] = useComments();
 
     return (
         <ul className='comment-list'>
             {comments.map(comment => 
                 <Comment
-                    activeUsername={activeUsername}
+                    activeUser={currentUser}
                     comment={comment} 
                     degree={0}
                     isReply={false}
                 />)} 
-            <CommentPost activeUser={currentUser} />
+            <CommentPost activeUser={currentUser} postType='SEND'/>
         </ul>
     )
 }

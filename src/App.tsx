@@ -4,7 +4,7 @@ import { CommentList } from './CommentList';
 
 const App = () => (
     <main>
-        <CommentList activeUsername={'juliusomo'}/>
+        <CommentList />
    </main> 
 ) 
 
